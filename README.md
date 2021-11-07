@@ -5,19 +5,20 @@
 -   [x] Criar uma instancia do MongoDB
 
 
+
 Criando imagem docker
 
-##Container db-auth
+#   Container db-auth
 docker run --name db-auth -p 5432:5432 -e POSTGRES_DB:autenticacao -e POSTGRES_USER:adm -e POSTGRES_PASSWORD:123456  postgres:latest
 
-##Container db-produtos 
+#   Container db-produtos 
 docker run --name db-produtos -p 5433:5433 -e POSTGRES_DB:db-produtos -e POSTGRES_USER:adm  -e POSTGRES_PASSWORD:123456  postgres:latest
 
 
-##Container db-vendas  api:node
+#   Container db-vendas  api:node
 docker run --name db-vendas  -p 27017:27017 -p 28017:28017 -e MONGODB_DATABASE="db-vendas" -e MONGODB_USER="admin" -e MONGODB_PASS="123456" tutum/mongodb
 
--- instalar o mongoDb Shell
+- instalar o mongoDb Shell
 
 https://www.mongodb.com/try/download/shell
 
