@@ -1,0 +1,43 @@
+version: '3'
+services:
+  db-auth:
+    image: postgres:latest
+    container_name: "db-auth"
+    restart: always
+    environment:
+      POSTGRES_DB: "db-auth"
+      POSTGRES_USER: adm 
+      POSTGRES_PASSWORD: 123456
+    ports: 
+      - 5432:5432
+
+  db-produtos:
+    image: postgres:latest
+    container_name: "db-produtos"
+    restart: always
+    environment:
+      POSTGRES_DB: "db-produtos"
+      POSTGRES_USER: adm 
+      POSTGRES_PASSWORD: 123456
+    ports: 
+      - 5433:5432
+
+  db-vendas:
+    image: tutum/mongodb
+    container_name: "db-vendas"
+    restart: always
+    environment:
+      MONGODB_DATABASE: "db-vendas" 
+      MONGODB_USER: "admin" 
+      MONGODB_PASS: "123456" 
+    ports: 
+      - 27017:27017 
+      - 28017:28017 
+
+  vendas-rabbit :
+    image: rabbitmq:3-management
+    container_name: vendas-rabbit
+    ports: 
+      - 5672:5672 
+      - 25676:25676
+      - 3001:15672
