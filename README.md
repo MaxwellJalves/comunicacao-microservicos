@@ -39,3 +39,10 @@ mongosh "mongodb://admin:123456@localhost:27017/db-vendas"
 
 -   Buscando registros
     db.vendas.find()
+
+
+# criando imagem do RabbitMQ
+
+-   docker run  --name vendas-rabbit -p 5672:5672 -p 25676:25676 -p 3001:15672 rabbitmq:3-management
+-   referencia : https://hub.docker.com/_/rabbitmq
+            -   user: guest password: guest
