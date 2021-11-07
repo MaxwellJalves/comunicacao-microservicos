@@ -1,8 +1,8 @@
 # comunicacao-microservicos
 
 
-- [x] Criar uma instancia do PostgresSQL
--  [x] Criar uma instancia do MongoDB
+-   [x] Criar uma instancia do PostgresSQL
+-   [x] Criar uma instancia do MongoDB
 
 
 Criando imagem docker
@@ -21,11 +21,21 @@ docker run --name db-vendas  -p 27017:27017 -p 28017:28017 -e MONGODB_DATABASE="
 
 https://www.mongodb.com/try/download/shell
 
+-   metodos
+https://docs.mongodb.com/mongodb-shell/reference/methods/
+
 
 String de conexão para acesso ao banco  "mongodb://admin:123456@localhost:27017/db-vendas"
-script : mongo  + stringDeConexao
+script :
 
 
-db.vendas  -- cria o objeto
+mongosh "mongodb://admin:123456@localhost:27017/db-vendas"
 
-db.vendas.insert({"codigo": 1, "descricao": "itens teste"})
+-   criando collection / tabela
+    db.vendas  
+
+-   inserindo dados
+    db.vendas.insert({"codigo": 1, "descricao": "itens teste"})
+
+-   Buscando registros
+    db.vendas.find()
